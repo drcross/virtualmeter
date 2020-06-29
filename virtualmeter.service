@@ -1,0 +1,14 @@
+[Unit]
+Description=virtualmeter
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /energy-logger/solar-sis/example/PCM60x/virtualmeter.py
+Restart=always
+User=pi
+WorkingDirectory=/energy-logger/solar-sis/example/PCM60x
+StandardOutput=inherit
+StandardError=inherit
+
+[Install]
+WantedBy=multi-user.target
